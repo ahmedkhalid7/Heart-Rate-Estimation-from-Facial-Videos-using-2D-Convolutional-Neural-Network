@@ -38,12 +38,12 @@ def predict():
                 predicted_heart_rate = predict_heart_rate(forehead_image_path, cheeks_image_path)
 
                 response = jsonify({'heart_rate': predicted_heart_rate})
-                response.headers.add('Access-Control-Allow-Origin', 'http://localhost:4200')
+                response.headers.add('Access-Control-Allow-Origin', 'https://webapp-634ky6czba-ew.a.run.app/')
                 return response, 200  # ok
 
         except Exception as e:
             response = jsonify({'error': str(e)})
-            response.headers.add('Access-Control-Allow-Origin', 'http://localhost:4200')
+            response.headers.add('Access-Control-Allow-Origin', 'https://webapp-634ky6czba-ew.a.run.app/')
             return response, 400  # bad request
 
         finally:
@@ -55,7 +55,7 @@ def predict():
                 os.remove(cheeks_image_path)
 
     response = jsonify({})
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:4200')
+    response.headers.add('Access-Control-Allow-Origin', 'https://webapp-634ky6czba-ew.a.run.app/')
     return response, 204  # no content
 
 
