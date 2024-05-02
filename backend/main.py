@@ -5,9 +5,10 @@ import cv2
 import os
 from face_detection import crop_regions
 from model_inference import predict_heart_rate
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def predict():
