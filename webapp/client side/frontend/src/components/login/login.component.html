@@ -1,0 +1,50 @@
+<div class="flex justify-content-center align-items-center">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+     <p-card header="Login" [style]="{ width: '360px' }">
+       <div class="p-fluid">
+         <label for="email">Email</label>
+         <input
+           type="text"
+           pInputText
+           formControlName="email"
+           style="width: 100%;"
+           name="email"
+           placeholder="Type your email"
+         />
+         <small
+           *ngIf="email.invalid && (email.dirty || email.touched)"
+           class="block p-error"
+         >
+           <div style="margin-top: 10px;" *ngIf="email.errors?.['required']">Email is required.</div>
+           <div style="margin-top: 10px;" *ngIf="email.errors?.['email']">Email should be valid</div>
+         </small>
+       </div>
+       <div style="margin-top: 15px;" class="p-fluid">
+         <label for="password">Password</label>
+         <input
+           type="password"
+           pInputText
+           formControlName="password"
+           style="width: 100%;"
+           name="password"
+           placeholder="Type your password"
+         />
+         <small
+           *ngIf="password.invalid && (password.dirty || password.touched)"
+           class="block p-error"
+         >
+           <div style="margin-top: 10px;" *ngIf="password.errors?.['required']">Password is required.</div>
+         </small>
+       </div>
+       <div style="margin-top: 15px;" class="p-fluid">
+        <p-button
+         label="SIGN IN"
+         styleClass="w-full"
+         type="submit"
+       ></p-button>
+       <div style="margin-top: 10px;" class="mt-2">Not a member? <a routerLink="/signup">Register</a></div>
+       </div>
+     </p-card>
+  </form>
+ </div>
+ 
