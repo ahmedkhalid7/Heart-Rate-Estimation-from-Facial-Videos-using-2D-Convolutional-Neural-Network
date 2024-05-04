@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div class="p-d-flex p-jc-center p-ai-center">
+    <div>
+      <h3 class="p-text-center">Heart Rate Estimation From Facial Video</h3>
+    </div>
+  </div>
+  <div class="p-d-flex p-jc-center p-ai-center">
+      <div *ngIf="!showWebcam">
+        <button pButton (click)="startHeartRateMeasurement()" label="Start Heart Rate Measurement"></button>
+      </div>
+      <div *ngIf="showWebcam">
+        <div *ngIf="predictedHeartRate" class="p-message p-component p-message-success">
+          <span class="p-message-icon pi pi-check"></span>
+          <span class="p-message-text">The predicted heart rate is {{ predictedHeartRate }} BPM</span>
+        </div>
+        <div *ngIf="errorMessage" class="p-message p-component p-message-error">
+          <span class="p-message-icon pi pi-times"></span>
+          <span class="p-message-text">{{ errorMessage }}</span>
+        </div>
+        <div class="video-container p-ai-center">
+          <video #video autoplay></video>
+        </div>
+      </div>
+    </div>
+</body>
+</html> 
