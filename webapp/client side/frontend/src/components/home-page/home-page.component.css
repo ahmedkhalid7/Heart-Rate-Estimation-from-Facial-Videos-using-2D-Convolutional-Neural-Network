@@ -14,15 +14,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
-}
-
 .button-container {
   margin-top: 20px;
   text-align: center;
@@ -43,7 +34,7 @@ body {
 
 .video-container video {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .predicted-heart-rate,
@@ -76,30 +67,4 @@ body {
 
 .button:hover {
   background-color: #0056b3;
-}
-
-@media (min-width: 768px) {
-  /* Adjust styles for screens larger than 768px width */
-  .container {
-    padding: 40px;
-  }
-
-  .video-container {
-    max-width: 640px;
-  }
-
-  .button {
-    font-size: 14pt;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Adjust styles for screens smaller than 480px width */
-  .container {
-    padding: 10px;
-  }
-
-  .button {
-    font-size: 10pt;
-  }
 }
