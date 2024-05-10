@@ -13,6 +13,6 @@ def detect_face(image_path):
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
     if len(faces) > 1:
-        raise Exception("System currently supports measuring heart rate for only one person within the same frame!")
+        raise Exception("More than one person in the frame")
 
     return faces
