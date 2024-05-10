@@ -18,8 +18,7 @@ class DetectFaceTests(unittest.TestCase):
         image_path = os.path.join(os.path.dirname(__file__), "..", "images", "multiple_persons_image.jpeg")
         with self.assertRaises(Exception) as context:
             detect_face(image_path)
-        self.assertEqual(str(context.exception), "System currently supports measuring heart rate for only one person "
-                                                 "within the same frame!")
+        self.assertEqual(str(context.exception), "More than one person in the frame")
 
 
 if __name__ == '__main__':
