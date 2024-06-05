@@ -103,7 +103,7 @@ export class HomePageComponent {
     console.log("blob size ", blob.size);
     formData.append('image', blob);
   
-    return fetch('https://production-422117.ew.r.appspot.com/predict', {
+    return fetch('https://serverside-tu64dty6ea-ww.a.run.app/predict', {
       method: 'POST',
       body: formData
     })
